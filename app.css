@@ -1,0 +1,62 @@
+
+body{
+    background-color: rgb(243, 242, 242);
+    font-family: 'Poppins', sans-serif !important;
+}
+
+a{
+    text-decoration: none !important;
+    font-weight: bold;
+    
+}
+label{
+    font-size: large;
+    padding: 20px;
+}
+input{
+    border-radius: 5px;
+    border: 1px solid #39c;
+}
+
+a:hover{
+    filter: brightness(85%);
+}
+.activo{
+    background-color:#FBC43D !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+.seccion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+
+.resultado{
+    font-size: 100px;
+}
+ .aprobo{
+    color: green;
+}
+.reprobo{
+    color: red;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+/* Utilidades para ventanas */
+
+.mostrar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ocultar{
+    display: none;
+}
