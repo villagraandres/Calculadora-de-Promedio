@@ -23,6 +23,10 @@ const medioTermino=document.querySelector('#medio-termino');
 const global=document.querySelector('#global');
 const portafolio=document.querySelector('#portafolio');
 
+/* Contenedor */
+
+const contenedor=document.querySelector('#contenido');
+
 
 examen1.addEventListener('input',validarExamen);
 examen2.addEventListener('input',validarExamen);
@@ -62,7 +66,7 @@ function validarGlobal(e){
 
 
 function validarPortafolio(e){
-    if(parseInt (e.target.value)>40 || parseInt(e.target.value.length)>=3  ){
+    if(parseInt (e.target.value)>40 ){
         e.target.value='';
         datos[e.target.name]='';
         return;
@@ -88,18 +92,52 @@ function validarDigitos(e){
 
 function mostrarPromedio(){
 
+   while(contenedor.firstChild){
+    contenedor.removeChild(contenedor.firstChild);
+   }
+
 
  if(Object.values(datos).includes('') || Object.values(datos).includes(NaN) ){
+
+    const alerta=`<div class="alert alert-danger m-5" role="alert">
+    Faltan datos de llenar!
+  </div>`;
+  contenedor.innerHTML=alerta;
+
     console.log('invalido');
     return;
  }
 
  let suma = 0;
+
+
 for (let key in datos) {
   suma += datos[key];
 }
-console.log(datos);
-console.log(suma);
+
+
+
+//Crear Html
+const calificacionFinal=document.createElement('p');
+const mensaje=document.createElement('p');
+calificacionFinal.textContent=suma;
+
+if(suma>=70){
+   calificacionFinal.classList.add('aprobo','resultado','text-center');
+   mensaje.textContent='Felcidades! Tu calificacion es aprobatoria';
+   contenedor.appendChild(calificacionFinal);
+   contenedor.appendChild(mensaje);
+    }else{
+        calificacionFinal.classList.add('reprobo','resultado','text-center');
+        mensaje.textContent='TU calificacion no supera el 70.';
+        
+        contenedor.appendChild(calificacionFinal);
+        contenedor.appendChild(mensaje);
+    }
+
+
+
+
 
 
 

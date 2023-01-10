@@ -60,3 +60,29 @@ a:hover{
 .ocultar{
     display: none;
 }
+
+.footer-container{
+    background: white;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    
+   
+
+
+@media(min-width: 768px){
+    .footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        }
+}
+
+.link{
+    font-size: 15px;
+}
