@@ -41,7 +41,7 @@ function validarExamen(e){
 
    validarDigitos(e);
 
-    datos[e.target.name]=  Math.round ((parseInt( e.target.value) * 5 ) / 100 );
+    datos[e.target.name]=  Math.round ((parseFloat( e.target.value) * 5 ) / 100 );
     
 
    
@@ -50,7 +50,7 @@ function validarExamen(e){
 function validarMedio(e){
     validarDigitos(e);
 
-    datos[e.target.name]= Math.round ((parseInt( e.target.value) * 15 ) / 100 );
+    datos[e.target.name]= Math.round((parseFloat( e.target.value) * 15 ) / 100) ;
     
     
 }
@@ -59,20 +59,20 @@ function validarGlobal(e){
 
     validarDigitos(e);
 
-    datos[e.target.name]= Math.round ((parseInt( e.target.value) * 25 ) / 100 ) ;
+    datos[e.target.name]= Math.round((parseFloat( e.target.value) * 25 ) / 100) ;
    
 
 }
 
 
 function validarPortafolio(e){
-    if(parseInt (e.target.value)>40 ){
+    if(parseFloat (e.target.value)>40 ){
         e.target.value='';
         datos[e.target.name]='';
         return;
     }
 
-    datos[e.target.name]=parseInt(e.target.value);  
+    datos[e.target.name]=  parseFloat(e.target.value);  
 }
 
 
@@ -115,6 +115,8 @@ for (let key in datos) {
   suma += datos[key];
 }
 
+console.log(Math.round(suma));
+console.log(datos);
 
 
 //Crear Html
