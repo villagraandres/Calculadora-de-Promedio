@@ -14,6 +14,7 @@ const datos={
 
 
 
+
 /* Inputs */
 const examen1=document.querySelector('#etapa-1');
 const examen2=document.querySelector('#etapa-2');
@@ -79,13 +80,12 @@ function validarPortafolio(e){
 
 
 function validarDigitos(e){
-    if(parseInt (e.target.value)>100 || parseInt(e.target.value.length)>=4  ){
+    if(parseInt (e.target.value)>100 || parseInt(e.target.value)<0 || parseInt(e.target.value.length)>=4  ){
         e.target.value='';
         datos[e.target.name]='';
         return;
     }
 }
-
 
 
 
@@ -115,8 +115,6 @@ for (let key in datos) {
   suma += datos[key];
 }
 
-console.log(Math.round(suma));
-console.log(datos);
 
 
 //Crear Html
