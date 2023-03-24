@@ -43,6 +43,10 @@ a:hover{
     color: red;
 }
 
+#faltante{
+    font-weight: bold;
+}
+
 .botones{
     display: flex;
     justify-content: space-around;

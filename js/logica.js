@@ -121,18 +121,22 @@ for (let key in datos) {
 const calificacionFinal=document.createElement('p');
 const mensaje=document.createElement('p');
 calificacionFinal.textContent=suma;
+const puntosFaltantes= document.getElementById('faltante')
 
 if(suma>=70){
+   puntosFaltantes.innerHTML='';
    calificacionFinal.classList.add('aprobo','resultado','text-center');
    mensaje.textContent='Felcidades! Tu calificacion es aprobatoria';
    contenedor.appendChild(calificacionFinal);
    contenedor.appendChild(mensaje);
     }else{
-        calificacionFinal.classList.add('reprobo','resultado','text-center');
-        mensaje.textContent='TU calificacion no supera el 70.';
+    
+      let faltante=70-suma;
+      calificacionFinal.classList.add('reprobo','resultado','text-center');
         
         contenedor.appendChild(calificacionFinal);
         contenedor.appendChild(mensaje);
+        puntosFaltantes.innerHTML=`  <p>Te faltan <span id="faltante">${faltante}</span> puntos para aprobar </p>`;
     }
 
 
