@@ -100,7 +100,7 @@ function mostrarPromedio(){
  if(Object.values(datos).includes('') || Object.values(datos).includes(NaN) ){
 
     const alerta=`<div class="alert alert-danger m-5" role="alert">
-    Faltan datos de llenar!
+    !Faltan datos de llenar!
   </div>`;
   contenedor.innerHTML=alerta;
 
@@ -126,7 +126,7 @@ const puntosFaltantes= document.getElementById('faltante')
 if(suma>=70){
    puntosFaltantes.innerHTML='';
    calificacionFinal.classList.add('aprobo','resultado','text-center');
-   mensaje.textContent='Felcidades! Tu calificacion es aprobatoria';
+   mensaje.textContent='!Felcidades! Tu calificación es aprobatoria';
    contenedor.appendChild(calificacionFinal);
    contenedor.appendChild(mensaje);
     }else{
